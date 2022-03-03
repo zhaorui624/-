@@ -1,0 +1,554 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "新闻中心",
+      "password": 123,
+      "roleState": true,
+      "default": true,
+      "region": "全校",
+      "roleId": 1
+    },
+    {
+      "username": "学生处",
+      "password": "123",
+      "region": "学生处",
+      "roleId": 2,
+      "roleState": true,
+      "default": false,
+      "id": 2
+    },
+    {
+      "username": "软件工程学院",
+      "password": "123",
+      "region": "软件工程学院",
+      "roleId": 2,
+      "roleState": true,
+      "default": false,
+      "id": 3
+    },
+    {
+      "username": "教务处",
+      "password": "123",
+      "region": "教务处",
+      "roleId": 2,
+      "roleState": true,
+      "default": false,
+      "id": 4
+    },
+    {
+      "username": "张三",
+      "password": "123",
+      "region": "学生",
+      "roleId": 3,
+      "roleState": true,
+      "default": false,
+      "id": 5
+    }
+  ],
+  "roles": [
+    {
+      "id": 1,
+      "roleName": "新闻审核中心",
+      "roleType": 1,
+      "rights": [
+        "/user-manage",
+        "/user-manage/add",
+        "/user-manage/delete",
+        "/user-manage/update",
+        "/user-manage/list",
+        "/right-manage",
+        "/right-manage/role/list",
+        "/right-manage/right/list",
+        "/right-manage/role/update",
+        "/right-manage/role/delete",
+        "/right-manage/right/update",
+        "/right-manage/right/delete",
+        "/news-manage",
+        "/news-manage/list",
+        "/news-manage/add",
+        "/news-manage/update/:id",
+        "/news-manage/preview/:id",
+        "/news-manage/draft",
+        "/news-manage/category",
+        "/audit-manage",
+        "/audit-manage/audit",
+        "/audit-manage/list",
+        "/publish-manage",
+        "/publish-manage/unpublished",
+        "/publish-manage/published",
+        "/publish-manage/sunset",
+        "/home"
+      ]
+    },
+    {
+      "id": 2,
+      "roleName": "校级用户",
+      "roleType": 2,
+      "rights": [
+        "/home",
+        "/user-manage",
+        "/user-manage/add",
+        "/user-manage/delete",
+        "/user-manage/update",
+        "/user-manage/list",
+        "/news-manage",
+        "/news-manage/list",
+        "/news-manage/add",
+        "/news-manage/update/:id",
+        "/news-manage/preview/:id",
+        "/news-manage/draft",
+        "/news-manage/category",
+        "/audit-manage",
+        "/audit-manage/audit",
+        "/audit-manage/list",
+        "/publish-manage",
+        "/publish-manage/unpublished",
+        "/publish-manage/published",
+        "/publish-manage/sunset"
+      ]
+    },
+    {
+      "id": 3,
+      "roleName": "个人用户",
+      "roleType": 3,
+      "rights": [
+        "/home",
+        "/news-manage",
+        "/news-manage/list",
+        "/news-manage/add",
+        "/news-manage/update/:id",
+        "/news-manage/preview/:id",
+        "/news-manage/draft",
+        "/audit-manage",
+        "/audit-manage/list",
+        "/publish-manage",
+        "/publish-manage/unpublished",
+        "/publish-manage/published",
+        "/publish-manage/sunset"
+      ]
+    }
+  ],
+  "children": [
+    {
+      "id": 3,
+      "title": "添加用户",
+      "rightId": 2,
+      "key": "/user-manage/add",
+      "grade": 2
+    },
+    {
+      "id": 4,
+      "title": "删除用户",
+      "rightId": 2,
+      "key": "/user-manage/delete",
+      "grade": 2
+    },
+    {
+      "id": 5,
+      "title": "修改用户",
+      "rightId": 2,
+      "key": "/user-manage/update",
+      "grade": 2
+    },
+    {
+      "id": 6,
+      "title": "用户列表",
+      "rightId": 2,
+      "key": "/user-manage/list",
+      "pagepermisson": 1,
+      "grade": 2
+    },
+    {
+      "id": 8,
+      "title": "角色列表",
+      "rightId": 7,
+      "key": "/right-manage/role/list",
+      "pagepermisson": 1,
+      "grade": 2
+    },
+    {
+      "id": 9,
+      "title": "权限列表",
+      "rightId": 7,
+      "key": "/right-manage/right/list",
+      "pagepermisson": 1,
+      "grade": 2
+    },
+    {
+      "id": 10,
+      "title": "修改角色",
+      "rightId": 7,
+      "key": "/right-manage/role/update",
+      "grade": 2
+    },
+    {
+      "id": 11,
+      "title": "删除角色",
+      "rightId": 7,
+      "key": "/right-manage/role/delete",
+      "grade": 2
+    },
+    {
+      "id": 12,
+      "title": "修改权限",
+      "rightId": 7,
+      "key": "/right-manage/right/update",
+      "grade": 2
+    },
+    {
+      "id": 13,
+      "title": "删除权限",
+      "rightId": 7,
+      "key": "/right-manage/right/delete",
+      "grade": 2
+    },
+    {
+      "id": 15,
+      "title": "新闻列表",
+      "rightId": 14,
+      "key": "/news-manage/list",
+      "grade": 2
+    },
+    {
+      "id": 16,
+      "title": "撰写新闻",
+      "rightId": 14,
+      "key": "/news-manage/add",
+      "grade": 2,
+      "pagepermisson": 1
+    },
+    {
+      "id": 17,
+      "title": "新闻更新",
+      "rightId": 14,
+      "key": "/news-manage/update/:id",
+      "grade": 2,
+      "routepermisson": 1
+    },
+    {
+      "id": 18,
+      "title": "新闻预览",
+      "rightId": 14,
+      "key": "/news-manage/preview/:id",
+      "grade": 2,
+      "routepermisson": 1
+    },
+    {
+      "id": 19,
+      "title": "草稿箱",
+      "rightId": 14,
+      "key": "/news-manage/draft",
+      "pagepermisson": 1,
+      "grade": 2
+    },
+    {
+      "id": 20,
+      "title": "新闻分类",
+      "rightId": 14,
+      "key": "/news-manage/category",
+      "pagepermisson": 1,
+      "grade": 2
+    },
+    {
+      "id": 22,
+      "title": "审核新闻",
+      "rightId": 21,
+      "key": "/audit-manage/audit",
+      "pagepermisson": 1,
+      "grade": 2
+    },
+    {
+      "id": 23,
+      "title": "审核列表",
+      "rightId": 21,
+      "key": "/audit-manage/list",
+      "pagepermisson": 1,
+      "grade": 2
+    },
+    {
+      "id": 25,
+      "title": "待发布",
+      "rightId": 24,
+      "key": "/publish-manage/unpublished",
+      "pagepermisson": 1,
+      "grade": 2
+    },
+    {
+      "id": 26,
+      "title": "已发布",
+      "rightId": 24,
+      "key": "/publish-manage/published",
+      "pagepermisson": 1,
+      "grade": 2
+    },
+    {
+      "id": 27,
+      "title": "已下线",
+      "rightId": 24,
+      "key": "/publish-manage/sunset",
+      "pagepermisson": 1,
+      "grade": 2
+    }
+  ],
+  "rights": [
+    {
+      "id": 1,
+      "title": "首页",
+      "key": "/home",
+      "pagepermisson": 1,
+      "grade": 1
+    },
+    {
+      "id": 2,
+      "title": "用户管理",
+      "key": "/user-manage",
+      "pagepermisson": 1,
+      "grade": 1
+    },
+    {
+      "id": 7,
+      "title": "权限管理",
+      "key": "/right-manage",
+      "pagepermisson": 1,
+      "grade": 1
+    },
+    {
+      "id": 14,
+      "title": "新闻管理",
+      "key": "/news-manage",
+      "pagepermisson": 1,
+      "grade": 1
+    },
+    {
+      "id": 21,
+      "title": "审核管理",
+      "key": "/audit-manage",
+      "pagepermisson": 1,
+      "grade": 1
+    },
+    {
+      "id": 24,
+      "title": "发布管理",
+      "key": "/publish-manage",
+      "pagepermisson": 1,
+      "grade": 1
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "title": "选课信息",
+      "value": "选课信息"
+    },
+    {
+      "id": 2,
+      "title": "课表信息",
+      "value": "课表信息"
+    },
+    {
+      "id": 3,
+      "title": "科学技术",
+      "value": "科学技术"
+    },
+    {
+      "id": 4,
+      "title": "娱乐新闻",
+      "value": "娱乐新闻"
+    },
+    {
+      "id": 5,
+      "title": "体育新闻",
+      "value": "体育新闻"
+    },
+    {
+      "id": 6,
+      "title": "生活新闻",
+      "value": "生活新闻"
+    }
+  ],
+  "regions": [
+    {
+      "id": 1,
+      "title": "学生处",
+      "value": "学生处"
+    },
+    {
+      "id": 2,
+      "title": "新闻中心",
+      "value": "新闻中心"
+    },
+    {
+      "id": 3,
+      "title": "教务处",
+      "value": "教务处"
+    },
+    {
+      "id": 4,
+      "title": "软件工程学院",
+      "value": "软件工程学院"
+    },
+    {
+      "id": 5,
+      "title": "计算机学院",
+      "value": "计算机学院"
+    },
+    {
+      "id": 6,
+      "title": "通信工程学院",
+      "value": "通信工程学院"
+    },
+    {
+      "id": 7,
+      "title": "体育学院",
+      "value": "体育学院"
+    },
+    {
+      "id": 8,
+      "title": "学生",
+      "value": "学生"
+    }
+  ],
+  "news": [
+    {
+      "title": "饭店开业",
+      "categoryId": 6,
+      "content": "<p>校门口新开一家饭店</p>\n",
+      "region": "学生",
+      "author": "张三",
+      "roleId": 3,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1646211872436,
+      "star": 0,
+      "view": 0,
+      "id": 1
+    },
+    {
+      "title": "院运会通知",
+      "categoryId": 5,
+      "content": "<p>下周举办学院运动会</p>\n",
+      "region": "软件工程学院",
+      "author": "软件工程学院",
+      "roleId": 2,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1646212059299,
+      "star": 0,
+      "view": 0,
+      "id": 2
+    },
+    {
+      "title": "篮球比赛",
+      "categoryId": 5,
+      "content": "<p>本周举办篮球比赛</p>\n",
+      "region": "全校",
+      "author": "新闻中心",
+      "roleId": 1,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1646213283790,
+      "star": 0,
+      "view": 0,
+      "id": 3
+    },
+    {
+      "title": "今晚有流星",
+      "categoryId": 3,
+      "content": "<p>预计今晚有流星</p>\n",
+      "region": "全校",
+      "author": "新闻中心",
+      "roleId": 1,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1646277917348,
+      "star": 0,
+      "view": 0,
+      "id": 4
+    },
+    {
+      "title": "课表公布",
+      "categoryId": 2,
+      "content": "<p>课表信息公布</p>\n",
+      "region": "全校",
+      "author": "新闻中心",
+      "roleId": 1,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1646277982611,
+      "star": 0,
+      "view": 0,
+      "id": 5
+    },
+    {
+      "title": "食堂“买一送一”’",
+      "categoryId": 6,
+      "content": "<p>食堂促销活动</p>\n",
+      "region": "全校",
+      "author": "新闻中心",
+      "roleId": 1,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1646278031690,
+      "star": 0,
+      "view": 0,
+      "id": 6
+    },
+    {
+      "title": "社团招新",
+      "categoryId": 4,
+      "content": "<p>社团招新</p>\n",
+      "region": "全校",
+      "author": "新闻中心",
+      "roleId": 1,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1646278098097,
+      "star": 0,
+      "view": 0,
+      "id": 7
+    },
+    {
+      "title": "选课通知",
+      "categoryId": 1,
+      "content": "<p>本周选课</p>\n",
+      "region": "全校",
+      "author": "新闻中心",
+      "roleId": 1,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1646278116033,
+      "star": 0,
+      "view": 0,
+      "id": 8
+    },
+    {
+      "title": "拔河比赛",
+      "categoryId": 5,
+      "content": "<p>举办拔河比赛</p>\n",
+      "region": "全校",
+      "author": "新闻中心",
+      "roleId": 1,
+      "auditState": 2,
+      "publishState": 1,
+      "createTime": 1646279585256,
+      "star": 0,
+      "view": 0,
+      "id": 9
+    },
+    {
+      "title": "‘千喜鹤’食堂举办活动",
+      "categoryId": 6,
+      "content": "<p>食堂举办活动</p>\n",
+      "region": "全校",
+      "author": "新闻中心",
+      "roleId": 1,
+      "auditState": 0,
+      "publishState": 0,
+      "createTime": 1646279641873,
+      "star": 0,
+      "view": 0,
+      "id": 10
+    }
+  ]
+}
